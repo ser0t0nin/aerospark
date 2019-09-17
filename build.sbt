@@ -10,7 +10,7 @@ javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 parallelExecution in test := false
 
-val sparkVer = "2.1.1"
+val sparkVer = "2.3.1"
 libraryDependencies ++= Seq(
 	"org.apache.spark"				%% "spark-core"				% sparkVer % Provided,
 	"org.apache.spark" 				%% "spark-sql"				% sparkVer % Provided,
