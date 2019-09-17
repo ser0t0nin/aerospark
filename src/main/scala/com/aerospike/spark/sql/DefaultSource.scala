@@ -78,7 +78,7 @@ class DefaultSource extends RelationProvider with Serializable with LazyLogging 
     logger.debug("creating write policy")
 
     val policy = new WritePolicy(client.writePolicyDefault)
-    policy.retryOnTimeout = true
+    //policy.retryOnTimeout = true
     mode match {
       case SaveMode.ErrorIfExists => policy.recordExistsAction = RecordExistsAction.CREATE_ONLY
       case SaveMode.Ignore => policy.recordExistsAction = RecordExistsAction.CREATE_ONLY
