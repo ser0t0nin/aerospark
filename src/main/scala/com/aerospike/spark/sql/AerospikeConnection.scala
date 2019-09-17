@@ -77,11 +77,11 @@ object AerospikeConnection extends LazyLogging {
     val newClient = new AerospikeClient(clientPolicy, host, port)
 
     // set all the timeouts
-    newClient.writePolicyDefault.timeout = timeOut
-    newClient.readPolicyDefault.timeout = timeOut
-    newClient.scanPolicyDefault.timeout = timeOut
+    //newClient.writePolicyDefault.timeout = timeOut
+    //newClient.readPolicyDefault.timeout = timeOut
+    //newClient.scanPolicyDefault.timeout = timeOut
     newClient.scanPolicyDefault.socketTimeout = socketTimeOut
-    newClient.queryPolicyDefault.timeout = timeOut
+    //newClient.queryPolicyDefault.timeout = timeOut
  
     for (node <- newClient.getNodes) {
       clientCache += (node.getHost.toString -> newClient)
